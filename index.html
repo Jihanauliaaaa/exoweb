@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>EXO: The Journey</title>
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#0d0d0d;
+            color:white;
+            transition:0.3s;
+        }
+
+        header{
+            text-align:center;
+            padding:40px 0;
+            border-bottom:1px solid #444;                                                                           
+        }
+
+        h1{
+            font-size:32px;
+            letter-spacing:2px;
+        }
+
+        .members{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+            gap:20px;
+            padding:40px;
+        }
+
+        .card{
+            background:#111;
+            border:1px solid silver;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 0 15px rgba(255,255,255,0.1);
+            transition:0.3s;
+            cursor:pointer;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 0 25px rgba(255,255,255,0.3);
+        }
+
+        .card img{
+            width:100%;
+            border-radius:10px;
+            filter:grayscale(100%);
+            transition:0.3s;
+        }
+
+        .card img:hover{
+            filter:grayscale(0%);
+        }
+
+        audio{
+            width:100%;
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>EXO</h1>
+</header>
+
+<section class="members">
+
+    <div class="card" data-link="suho.html">
+        <img src="suhoo.jpg" alt="Suho">
+        <h2>Suho</h2>
+        <p>Leader EXO, Vocalist</p>
+    </div>
+
+    <div class="card" data-link="baekhyun.html">
+        <img src="baek.jpg" alt="Baekhyun">
+        <h2>Baekhyun</h2>
+        <p>Main Vocalist</p>
+    </div>
+
+    <div class="card" data-link="chen.html">
+        <img src="chen.jpg" alt="Chen">
+        <h2>Chen</h2>
+        <p>Main Vocalist</p>
+    </div>
+
+    <div class="card" data-link="chanyeol.html">
+        <img src="cy.jpg" alt="Chanyeol">
+        <h2>Chanyeol</h2>
+        <p>Rapper, Vocalist</p>
+    </div>
+
+    <div class="card" data-link="do.html">
+        <img src="do.jpg" alt="D.O">
+        <h2>D.O.</h2>
+        <p>Main Vocalist</p>
+    </div>
+
+    <div class="card" data-link="kai.html">
+        <img src="kai.jpg" alt="Kai">
+        <h2>Kai</h2>
+        <p>Main Dancer</p>
+    </div>
+
+    <div class="card" data-link="sehun.html">
+        <img src="sehun.jpg" alt="Sehun">
+        <h2>Sehun</h2>
+        <p>Rapper, Visual</p>
+    </div>
+
+    <div class="card" data-link="xiumin.html">
+        <img src="xiumin.jpg" alt="Xiumin">
+        <h2>Xiumin</h2>
+        <p>Vocalist</p>
+    </div>
+
+    <div class="card" data-link="lay.html">
+        <img src="lay.jpg" alt="Lay">
+        <h2>Lay</h2>
+        <p>Vocalist, Dancer</p>
+    </div>
+
+</section>
+
+<script>
+// Ketika card diklik → masuk ke halaman biodata
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+        const link = card.getAttribute("data-link");
+        window.location.href = link; 
+    });
+});
+</script>
+
+</body>
+</html>

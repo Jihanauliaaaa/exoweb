@@ -1,140 +1,126 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>EXO: The Journey</title>
-    <style>
-        body{
-            margin:0;
-            font-family:Arial, sans-serif;
-            background:#0d0d0d;
-            color:white;
-            transition:0.3s;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masuk - EXO Fan Web</title>
 
-        header{
-            text-align:center;
-            padding:40px 0;
-            border-bottom:1px solid #444;                                                                           
-        }
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        h1{
-            font-size:32px;
-            letter-spacing:2px;
-        }
+<style>
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#0d0d0d;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
 
-        .members{
-            display:grid;
-            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-            gap:20px;
-            padding:40px;
-        }
+.auth-box{
+    background:#111;
+    border:1px solid silver;
+    padding:35px;
+    border-radius:20px;
+    width:360px;
+    box-shadow:0 0 25px rgba(255,255,255,0.15);
+}
 
-        .card{
-            background:#111;
-            border:1px solid silver;
-            padding:20px;
-            border-radius:15px;
-            box-shadow:0 0 15px rgba(255,255,255,0.1);
-            transition:0.3s;
-            cursor:pointer;
-        }
+.auth-box h1{
+    text-align:center;
+    letter-spacing:3px;
+    margin-bottom:5px;
+}
 
-        .card:hover{
-            transform:translateY(-5px);
-            box-shadow:0 0 25px rgba(255,255,255,0.3);
-        }
+.auth-box p{
+    text-align:center;
+    color:#aaa;
+    font-size:14px;
+    margin-bottom:25px;
+}
 
-        .card img{
-            width:100%;
-            border-radius:10px;
-            filter:grayscale(100%);
-            transition:0.3s;
-        }
+.auth-box input,
+.auth-box select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:10px;
+    border:1px solid #555;
+    background:#1a1a1a;
+    color:white;
+    font-family:'Poppins', sans-serif;
+}
 
-        .card img:hover{
-            filter:grayscale(0%);
-        }
+.auth-box button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:white;
+    color:black;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
 
-        audio{
-            width:100%;
-            margin-top:10px;
-        }
-    </style>
+.auth-box button:hover{
+    background:#ddd;
+    transform:scale(1.03);
+}
+
+.info{
+    margin-top:15px;
+    font-size:12px;
+    color:#888;
+    text-align:center;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<div class="auth-box">
     <h1>EXO</h1>
-</header>
+    <p>Masuk untuk menjelajahi profil member EXO</p>
 
-<section class="members">
+    <form onsubmit="return masuk()">
+        <input type="text" id="nama" placeholder="Nama Pengunjung" required>
 
-    <div class="card" data-link="suho.html">
-        <img src="suhoo.jpg" alt="Suho">
-        <h2>Suho</h2>
-        <p>Leader EXO, Vocalist</p>
+        <select id="bias" required>
+            <option value="">Pilih Member Favorit</option>
+            <option>Suho</option>
+            <option>Xiumin</option>
+            <option>Lay</option>
+            <option>Baekhyun</option>
+            <option>Chen</option>
+            <option>Chanyeol</option>
+            <option>D.O.</option>
+            <option>Kai</option>
+            <option>Sehun</option>
+        </select>
+
+        <button type="submit">Masuk</button>
+    </form>
+
+    <div class="info">
+        Data digunakan untuk personalisasi informasi
     </div>
-
-    <div class="card" data-link="baekhyun.html">
-        <img src="baek.jpg" alt="Baekhyun">
-        <h2>Baekhyun</h2>
-        <p>Main Vocalist</p>
-    </div>
-
-    <div class="card" data-link="chen.html">
-        <img src="chen.jpg" alt="Chen">
-        <h2>Chen</h2>
-        <p>Main Vocalist</p>
-    </div>
-
-    <div class="card" data-link="chanyeol.html">
-        <img src="cy.jpg" alt="Chanyeol">
-        <h2>Chanyeol</h2>
-        <p>Rapper, Vocalist</p>
-    </div>
-
-    <div class="card" data-link="do.html">
-        <img src="do.jpg" alt="D.O">
-        <h2>D.O.</h2>
-        <p>Main Vocalist</p>
-    </div>
-
-    <div class="card" data-link="kai.html">
-        <img src="kai.jpg" alt="Kai">
-        <h2>Kai</h2>
-        <p>Main Dancer</p>
-    </div>
-
-    <div class="card" data-link="sehun.html">
-        <img src="sehun.jpg" alt="Sehun">
-        <h2>Sehun</h2>
-        <p>Rapper, Visual</p>
-    </div>
-
-    <div class="card" data-link="xiumin.html">
-        <img src="xiumin.jpg" alt="Xiumin">
-        <h2>Xiumin</h2>
-        <p>Vocalist</p>
-    </div>
-
-    <div class="card" data-link="lay.html">
-        <img src="lay.jpg" alt="Lay">
-        <h2>Lay</h2>
-        <p>Vocalist, Dancer</p>
-    </div>
-
-</section>
+</div>
 
 <script>
-// Ketika card diklik → masuk ke halaman biodata
-document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", () => {
-        const link = card.getAttribute("data-link");
-        window.location.href = link; 
-    });
-});
+function masuk(){
+    const dataPengunjung = {
+        nama: document.getElementById("nama").value,
+        bias: document.getElementById("bias").value
+    };
+
+    localStorage.setItem("fanEXO", JSON.stringify(dataPengunjung));
+    window.location.href = "home.html";
+    return false;
+}
 </script>
 
 </body>
